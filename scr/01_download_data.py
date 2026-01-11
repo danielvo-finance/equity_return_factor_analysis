@@ -10,17 +10,21 @@ import os
 
 RAW_DIR = "data/raw"
 
-tickers = input("Enter stock ticker(s) to analyze (comma seperated): ").upper()
+tickers = input("Enter stock ticker(s) to analyze (comma separated): ").upper()
 tickers = [t.strip() for t in tickers.split(",")]
 
 start_date = input("Enter the start date of the data (e.g. 2015-01-01): ")
 end_date = input("Enter the end date: ")
 
 def download_data(ticker, start, end):
+    # Ensure that data/raw exist
     os.makedirs(RAW_DIR, exist_ok=True)
+
+    # Will later allow us to download single stocks to separate CSVs instead of an aggregated one
     path = f"{RAW_DIR}/{ticker}.csv"
 
     if os.path.exists(path):
+        print(f"{ticker}.csv already exists.")
         return
     
     # Takes input from user and download data from Yahoo Finance
@@ -28,6 +32,7 @@ def download_data(ticker, start, end):
 
     # Creates a csv for the downloaded data in data/raw/
     df.to_csv(path)
+    print(f"{ticker} is saved")
 
 for t in tickers:
     download_data(t, start_date, end_date)
