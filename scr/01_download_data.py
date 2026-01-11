@@ -11,18 +11,18 @@ import os
 RAW_DIR = "data/raw"
 
 tickers = input("Enter stock ticker(s) to analyze (comma seperated): ").upper()
-tickers = [t.strip() for t in tickers.split(",")]
+tickers.split(",")
 
-start = input("Enter the start date of the data (e.g. 2015-01-01): ")
-end = input("Enter the end date: ")
+start_date = input("Enter the start date of the data (e.g. 2015-01-01): ")
+end_date = input("Enter the end date: ")
 
-def download_data(ticker):
+def download_data(ticker, start, end):
     os.makedirs(RAW_DIR, exist_ok=True)
 
     # takes input from user and receive data from Yahoo Finance
-    df = yf.download(ticker, start=start, end=end, progress=False, auto_adjust=True)
+    df = yf.download(ticker, start=start, end=end, progress=False, group_by="column", auto_adjust=True)
+
     df.to_csv(f"{RAW_DIR}/{ticker}.csv")
 
-
-
-download_data(tickers)
+for t in tickers:
+    download_data(tickers, start_date, end_date)
