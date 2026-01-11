@@ -8,5 +8,5 @@ Note:
 import yfinance as yf
 import os
 
-def download_data():
+def download_data(ticker, start, end):
     pass
