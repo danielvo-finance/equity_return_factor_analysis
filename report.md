@@ -6,7 +6,7 @@ This project was chosen to deepen my understanding of equity returns, while stre
 Which factors best explain the variation in daily stock returns?
 
 ## Data
-### Time Period 
+### Timeframe 
 January 1, 2015 - January 1, 2025 (10 Year Period)
 
 ### Assets
