@@ -7,7 +7,7 @@ For this project I will implement CAPM, Fama-French, and PCA over AAPL, JPM, and
 **Goal:** To identify factors that explain why stocks outperform or underperform over time. This can help investors make informed decisions, optimize portfolios, or even manage risk.
 
 ### Why Factor Models Matter
-The CAPM and Fama-French models are essential in finance. These models help break down stock returns into systematic and nonsystematic risks. Factor models show specific drivers that impact returns (e.g. beta, size, book value). Which can help:
+The CAPM and Fama-French three-factor model are essential in finance. These models help break down stock returns into systematic and nonsystematic risks. Factor models show specific drivers that impact returns (e.g. beta, size, book value). Which can help:
 
 - Portfolio construction
 - Risk management

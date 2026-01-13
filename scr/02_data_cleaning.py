@@ -30,7 +30,6 @@ def compute_returns(file):
     df["Return"] = df["Close"].pct_change()
     df = df.dropna()
 
-
     df.to_csv(f"{PROCESSED_DIR}/{ticker}_processed.csv")
     print(f"Saved processed data for {ticker}")
 
