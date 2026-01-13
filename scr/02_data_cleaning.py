@@ -17,7 +17,7 @@ for f in file:
 
 def compute_returns(ticker):
     os.makedirs(PROCESSED_DIR, exist_ok=True)
-
+    
     df = pd.read_csv(
         os.path.join(RAW_DIR, ticker),
         header=None,
@@ -29,7 +29,7 @@ def compute_returns(ticker):
     df["Close"] = pd.to_numeric(df["Close"], errors="coerce")
     df["Return"] = df["Close"].pct_change()
 
-    df.to_cvs(f"{PROCESSED_DIR}/{ticker}_processed.csv")
+    df.to_csv(f"{PROCESSED_DIR}/{ticker}_processed.csv")
     print(f"Saved processed data for {ticker}")
 
 for t in file:
